@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br>
+<head>
+    <meta charset=" UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<title>Documet</title>
+</head>
+
+<body class="contador">
+    <header>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="./index.html">Menu</a></li>
+                <li><a href="./contador.html">Contador</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main></main>
+
+    <div class="ola">
+        <h1>Contador</h1>
+        <p class="numero"></p>
+        <button onclick="mais()">mais</button>
+        <button onclick="multi()">multiplicar</button>
+        <button onclick="menos()">menos</button>
+    </div>
+
+    <script>
+        let numero = 0
+
+        function mais() {
+            numero++
+            render()
+            if (numero >= 16000) {
+                numero = 0;
+                alert("Boa! você econtrou o limite maximo desse contador")
+            }
+        }
+        function multi() {
+            numero = numero * 2
+            render()
+            if (numero >= 16000) {
+                numero = 0;
+                alert("Boa! você econtrou o limite maximo desse contador")
+            }
+        }
+        function menos() {
+            numero--
+            render()
+        }
+        function render() {
+            const p = document.querySelector("p")
+            p.innerText = numero
+        }
+        render()
+    </script>
+
+</body>
+
+</html>
